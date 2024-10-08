@@ -4,10 +4,10 @@ import Navigation from "./Components/Navigation/Navigation";
 export default function Home() {
   return (
     <div className="h-screen w-screen">
-      <div className="h-16 hidden sm:block">
+      <div className="fixed top-0 left-0">
         <Navigation />
       </div>
-      <div>
+      <div className="mt-16">
         <Contents />
       </div>
     </div>
