@@ -46,54 +46,67 @@ const Contents = () => {
   }, []);
 
   return (
-    <div className="flex flex-col overflow-y-scroll">
+    <div id="top" className="flex flex-col overflow-y-scroll">
       {/* ポートフォリオ */}
-      <div className="border-b-2 border-dashed border-black w-1/4 mt-4">
+      <div
+        id="portfolios"
+        className="border-b-2 border-dashed border-black mt-4 w-1/4 sm:w-24 "
+      >
         My Portfolio
       </div>
-      {datas ? (
-        datas.portfolio.map((data) => (
-          <div key={data.id} className="flex flex-col items-center ">
-            <div className="flex flex-col items-center mt-4">{data.title}</div>
-            <Image
-              src={data.src}
-              alt=""
-              width={150} // 幅を指定
-              height={150} // 高さを指定
-              className="w-40 h-40 my-4" // 画像を正方形に表示
-            />
-            <p className="border-b border-black w-1/2"></p>
-          </div>
-        ))
-      ) : (
-        <div>データを読み込んでいます...</div>
-      )}
-      <p className="border-2 border-dashed border-gray-300 w-full mt-8 mb-"></p>
-
-      {/* 技術スタック */}
-      <div className="mb-8">
-        <div className="border-b-2 border-dashed border-black w-1/4 mt-4">
-          技術スタック
-        </div>
+      <div className="sm:flex sm:flex-wrap justify-around">
         {datas ? (
-          datas.technologyStack.map((tech) => (
-            <div key={tech.id} className="flex flex-col items-center">
-              <div className="flex flex-col items-center mt-4">
-                {tech.title}
+          datas.portfolio.map((data) => (
+            <div
+              key={data.id}
+              className="flex flex-col items-center lg:w-1/5 p-4"
+            >
+              <div className="flex flex-col items-center mt-4 ">
+                {data.title}
               </div>
               <Image
-                src={tech.src}
+                src={data.src}
                 alt=""
                 width={150} // 幅を指定
                 height={150} // 高さを指定
                 className="w-40 h-40 my-4" // 画像を正方形に表示
               />
-              <p className="border-b border-black w-1/2"></p>
+              <p className="border-b border-black w-1/2 sm:hidden"></p>
             </div>
           ))
         ) : (
-          <div>データを読み込んでいます...</div> // ローディングメッセージ
+          <div>データを読み込んでいます...</div>
         )}
+      </div>
+
+      <p className="border-2 border-dashed border-gray-300 w-full mt-8 "></p>
+
+      {/* 技術スタック */}
+      <div id="skills" className="mb-8">
+        <div className="border-b-2 border-dashed border-black w-1/4 mt-4 sm:w-24">
+          技術スタック
+        </div>
+        <div className="sm:flex sm:flex-wrap justify-around">
+          {datas ? (
+            datas.technologyStack.map((tech) => (
+              <div key={tech.id} className="flex flex-col items-center">
+                <div className="flex flex-col items-center mt-4">
+                  {tech.title}
+                </div>
+                <Image
+                  src={tech.src}
+                  alt=""
+                  width={150} // 幅を指定
+                  height={150} // 高さを指定
+                  className="w-40 h-40 my-4" // 画像を正方形に表示
+                />
+                <p className="border-b border-black w-1/2 sm:hidden"></p>
+              </div>
+            ))
+          ) : (
+            <div>データを読み込んでいます...</div> // ローディングメッセージ
+          )}
+        </div>
       </div>
     </div>
   );

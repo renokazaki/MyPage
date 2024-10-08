@@ -33,15 +33,27 @@ const Navigation = () => {
                 onClick={(e) => e.stopPropagation()} // モーダル内部のクリックイベントをバブルアップさせない
                 className="bg-white p-8 rounded-lg w-3/4 h-2/4 flex flex-col items-center justify-around"
               >
-                <h2 className="text-xl font-bold mb-4 text-co  text-slate-600">
+                <a
+                  href="#top"
+                  className="text-xl font-bold mb-4 text-co  text-slate-600"
+                  onClick={() => closeModal(isTouch)}
+                >
                   モーダルのタイトル
-                </h2>
-                <h2 className="text-xl font-bold mb-4 text-co  text-slate-600">
+                </a>
+                <a
+                  href="#portfolios"
+                  className="text-xl font-bold mb-4 text-co  text-slate-600"
+                  onClick={() => closeModal(isTouch)}
+                >
                   モーダルのタイトル
-                </h2>
-                <h2 className="text-xl font-bold mb-4 text-co  text-slate-600">
+                </a>
+                <a
+                  href="#skills"
+                  className="text-xl font-bold mb-4 text-co  text-slate-600"
+                  onClick={() => closeModal(isTouch)}
+                >
                   モーダルのタイトル
-                </h2>
+                </a>
 
                 <div
                   onClick={() => closeModal(isTouch)}
@@ -58,9 +70,9 @@ const Navigation = () => {
       )}
       {/* デスクトップサイズのナビゲーションメニュー */}
       <div className="fixed w-full h-16 hidden sm:flex flex-row justify-around items-center bg-slate-500 text-white">
-        <div>home</div>
-        <div>Portfolio</div>
-        <div>技術スタック</div>
+        <a href="#top">home</a>
+        <a href="#portfolios">Portfolio</a>
+        <a href="#skills">技術スタック</a>
       </div>
     </div>
   );
