@@ -2,10 +2,10 @@
   "portfolio": [
     {
       "id": "1",
-      "title": "新しいプロジェクト",
-      "description": "プロジェクトの説明",
+      "title": "MovieShare",
+      "description": "動画共有SNS",
       "src":"/images/test.jpg",
-      "link": "https://example.com"
+      "link": "https://movie-share-prottype.vercel.app/"
     },
     {
       "id": "2",

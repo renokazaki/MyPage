@@ -64,13 +64,16 @@ const Contents = () => {
               <div className="flex flex-col items-center mt-4 ">
                 {data.title}
               </div>
-              <Image
-                src={data.src}
-                alt=""
-                width={150} // 幅を指定
-                height={150} // 高さを指定
-                className="w-40 h-40 my-4" // 画像を正方形に表示
-              />
+              <a href={data.link}>
+                <Image
+                  src={data.src}
+                  alt=""
+                  width={150} // 幅を指定
+                  height={150} // 高さを指定
+                  className="w-40 h-40 my-4" // 画像を正方形に表示
+                />
+              </a>
+
               <p className="border-b border-black w-1/2 sm:hidden"></p>
             </div>
           ))
